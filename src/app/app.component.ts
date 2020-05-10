@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'spTable';
+  tableConfig = {
+    "page_id" : 1,
+    "ps": 10,
+    "pn": 1    
+  };
+
+  rowSelected(row) {
+    console.log(row)
+  }
 }

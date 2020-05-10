@@ -1,0 +1,27 @@
+<table width="100%" border="0">
+    <thead>
+        <tr>
+            <th><input type="checkbox" (change)="checkAll($event)" /></th>
+            <th *ngFor="let col of columns" [width]="col.width">
+                {{col.label}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of tableData">
+            <td><input type="checkbox" [checked]="row.selected" (change)="checkSingle(row)" /></td>
+            <ng-container *ngFor="let col of columns">
+                <td>
+                    <div *ngIf="col.type === 'component'; else textField">
+                        <app-component-loader 
+                        [rendercomponent]="col.components"  
+                        [data]="row"></app-component-loader>
+                    </div>
+                    <ng-template #textField>
+                        <div>{{row[col.key]}}</div>
+                    </ng-template>
+                </td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>

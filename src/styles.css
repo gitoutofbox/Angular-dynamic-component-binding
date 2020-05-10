@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    font-size: 1.3rem;
+}
+table{ border: 1px solid rgb(189, 164, 164);}
+thead tr {
+    background-color: #fedfde;
+}
+th {padding: 10px;}
+tr:nth-child(even) {background-color: rgb(221, 235, 230);}
+td{ padding: 10px; border: 1px solid rgb(189, 164, 164)}
+td:first-child{border-left:0}
+td:last-child{border-right:0}
