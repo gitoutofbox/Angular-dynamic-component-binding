@@ -26,9 +26,7 @@ export class ComponentLoaderComponent implements OnInit, AfterViewInit {
       for(const component of this.rendercomponent) {
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.AllComponents[component]);
         const componentRef = this.componentHost.createComponent(componentFactory);
-        setTimeout(()=> {
-          (<any>componentRef.instance).data = this.data;
-        },10);
+        (<any>componentRef.instance).data = this.data;
       }
     }
   }
